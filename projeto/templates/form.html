@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/reset.css" />
+    <link rel="stylesheet" href="../static/form.css" />
+    <link rel="stylesheet" href="../static/responsive.css" />
+    <link rel="stylesheet" href="../static/obrigado.css" />
+    <title>formulário</title>
+  </head>
+  <body>
+    <form action="/enviar" method="POST">
+      <h2>Questionário Big Data</h2>
+
+      <label>Nome (ou iniciais):</label>
+      <input type="text" name="nome" required />
+
+      <label>Idade:</label>
+      <input type="number" name="idade" min="0" max="120" required />
+
+      <label>Cidade/Estado:</label>
+      <input type="text" name="cidade" required />
+
+      <label>Gênero:</label>
+      <select name="genero" required>
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+        <option value="Prefiro não informar">Prefiro não informar</option>
+      </select>
+
+      <label>Horas de sono por noite:</label>
+      <select name="sono" required>
+        <option>Menos de 5h</option>
+        <option>5h a 7h</option>
+        <option>7h a 9h</option>
+        <option>Mais de 9h</option>
+      </select>
+
+      <label>Atividade física por semana:</label>
+      <select name="atividade" required>
+        <option>Nunca</option>
+        <option>1 a 2 vezes</option>
+        <option>3 a 5 vezes</option>
+        <option>Todos os dias</option>
+      </select>
+
+      <label>Bebida mais consumida:</label>
+      <select name="bebida" required>
+        <option>Água</option>
+        <option>Café</option>
+        <option>Refrigerante</option>
+        <option>Suco</option>
+        <option>Energético</option>
+      </select>
+
+      <label>Aplicativo mais usado:</label>
+      <select name="app" required>
+        <option>WhatsApp</option>
+        <option>Instagram</option>
+        <option>TikTok</option>
+        <option>YouTube</option>
+        <option>Outro</option>
+      </select>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>

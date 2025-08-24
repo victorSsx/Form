@@ -1,0 +1,32 @@
+@media (max-width: 600px) {
+    form {
+        padding: 10px;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    input[type="text"],
+    input[type="number"],
+    select {
+        padding: 8px;
+    }
+    button {
+        padding: 8px 12px;
+    }
+    table {
+        font-size: 0.9em;
+    }
+    th,
+    td {
+        padding: 10px;
+    }
+    th {
+        font-size: 1em;
+    }
+    td {
+        font-size: 0.9em;
+    }
+    button:hover {
+        background-color: #449d44;
+    }
+}
