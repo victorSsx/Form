@@ -29,16 +29,6 @@ FIELDNAMES = [
 # 2 Rotas HTTP
 # ------------------------------
 
-@app.route("/")
-def home():
-    return render_template("form.html")
-
-@app.route("/enviar", methods=["POST"])
-def enviar():
-    nome = request.form.get("nome")
-    return f"Olá, {nome}! Formulário enviado com sucesso."
-
-
 @app.get("/")
 def index():
     """Rota inicial que mostra o formulário"""
