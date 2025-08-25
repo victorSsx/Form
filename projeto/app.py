@@ -28,6 +28,13 @@ FIELDNAMES = [
 # ------------------------------
 # 2 Rotas HTTP
 # ------------------------------
+@app.route("/", methods=["GET", "POST"])
+def index():
+    if request.method == "POST":
+        nome = request.form.get("nome")
+        return f"Olá, {nome}!"
+    return render_template("form.html")
+
 
 @app.get("/")
 def index():
