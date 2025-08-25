@@ -2,7 +2,7 @@ import sys # Para manipulação do sistema
 import os # Para manipulação de caminhos
 
 # Adiciona o diretório pai ao sys.path
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app import app # Importa a aplicação Flask do arquivo app.py
 
