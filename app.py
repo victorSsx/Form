@@ -87,12 +87,15 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 # ------------------------------
-# 4 Handler para Vercel
-# ------------------------------
+from flask import Flask, render_template, request
 
-@app.route("/", methods=["GET", "POST"])
+app = Flask(__name__)
+
+@app.route("/")
 def home():
-    if request.method == "POST":
-        nome = request.form.get("nome")
-        return f"Olá, {nome}!"
     return render_template("form.html")
+
+@app.route("/enviar", methods=["POST"])
+def enviar():
+    nome = request.form.get("nome")
+    return f"Olá, {nome}! Formulário enviado com sucesso."
