@@ -28,13 +28,6 @@ FIELDNAMES = [
 # ------------------------------
 # 2 Rotas HTTP
 # ------------------------------
-@app.route("/", methods=["GET", "POST"])
-def index():
-    if request.method == "POST":
-        nome = request.form.get("nome")
-        return f"Olá, {nome}!"
-    return render_template("form.html")
-
 
 @app.get("/")
 def index():
@@ -92,3 +85,20 @@ def obrigado():
 # ------------------------------
 if __name__ == "__main__":
     app.run(debug=True)
+
+# ------------------------------
+# 4 Handler para Vercel
+# ------------------------------
+@app.get("/api/form")
+def api_form():
+    """Endpoint da API para o formulário"""
+    return render_template("form.html")
+
+@app.post("/api/enviar")
+def api_enviar():
+    """Endpoint da API para receber dados do formulário"""
+    # Aqui você pode reutilizar a lógica da função `enviar`
+    return enviar()
+# Handler que a Vercel precisa
+def handler(environ, start_response):
+    return app(environ, start_response) # Chama a aplicação Flask
