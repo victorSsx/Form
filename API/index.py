@@ -1,4 +1,13 @@
-from app import app
+from flask import Flask, render_template, request
 
-# O Vercel precisa que exista essa variável global chamada "app"
-app = app
+app = Flask(__name__, template_folder="../templates")
+
+@app.route("/", methods=["GET"])
+def home():
+    return render_template("form.html")
+
+@app.route("/enviar", methods=["POST"])
+def enviar():
+    nome = request.form.get("nome")
+    email = request.form.get("email")
+    return f"Obrigado, {nome}! Recebemos seu email: {email}"
